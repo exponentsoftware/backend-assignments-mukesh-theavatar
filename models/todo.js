@@ -16,11 +16,11 @@ const taskSchema = new mongoose.Schema({
         category:{
             type: String,
             enum:["Work", "Hobby", "Task"],
-            required: true
+            required: [true, "category need to be added"]
         }
 },
 { timestamp: true });
 
-const todo = mongoose.model('task',taskSchema);
+module.exports = mongoose.model('task',taskSchema);
 
-module.exports = todo;
+//module.exports = todo;

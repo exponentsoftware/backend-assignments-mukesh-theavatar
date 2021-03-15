@@ -1,3 +1,4 @@
+
 const express = require('express');
 const http = require('http');
 const path = require('path');
@@ -20,10 +21,8 @@ next();
 })
 
 //Routes 
-
 var routes = require('./routes');
 var tasks = require('./routes/tasks');
-
 
 
 // NodeJS Server
