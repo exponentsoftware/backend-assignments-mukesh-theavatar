@@ -4,7 +4,7 @@ const taskSchema = new mongoose.Schema({
     username:{
         type:String,
         required:[true,"Username is needed!"]
-    },
+    }, 
     title:{
         type:String,
         required:[true,"Title is needed!"]

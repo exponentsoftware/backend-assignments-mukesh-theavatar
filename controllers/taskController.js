@@ -7,7 +7,8 @@ const addTask = async(req, res) => {
         let task = new Task({
             username,
             title,
-            category
+            category,
+            status
         });
         let result = await task.save();
         return res.status(200).send({
