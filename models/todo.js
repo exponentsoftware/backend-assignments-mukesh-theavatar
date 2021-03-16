@@ -17,9 +17,19 @@ const taskSchema = new mongoose.Schema({
             type: String,
             enum:["Work", "Hobby", "Task"],
             required: [true, "category need to be added"]
+        },
+        createdAt:{
+            type: Date,
+            default: Date.now
+        },
+        updatedAt:{
+            type: Date,
+            default: Date.now
         }
 },
 { timestamp: true });
+
+console.log("\n Available task categories are:"+"\n");
 
 module.exports = mongoose.model('task',taskSchema);
 

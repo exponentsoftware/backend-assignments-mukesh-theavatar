@@ -17,17 +17,6 @@ const Task = require('./models/todo');
 //Parsing User Data to Json Format
 app.use(bodyParser.json());
 
-//Connecting the MongoDB Database
-mongoose.connect('mongodb://localhost:27017/soal-db',{
-    useNewParser: true,
-    useUnifiedTopology: true,
-    userCreateIndex: true
-})
-.then(() => {
-    console.log("MongoDB CONNECTED");
-}).catch((error) => {
-    console.log(error);
-});
 
 //Server running Log information
 app.listen(port,() => {
