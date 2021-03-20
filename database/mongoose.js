@@ -1,15 +1,16 @@
-
-const mongoose = require('mongoose');
-const url = process.env.DB_URL
+const mongoose = require("mongoose");
+const url = process.env.DB_URL;
 
 //Connecting the MongoDB Database
-mongoose.connect('mongodb://localhost:27017/soal-db',{
+mongoose
+  .connect("mongodb://localhost:27017/soal-db", {
     useNewParser: true,
     useUnifiedTopology: true,
-    userCreateIndex: true
-})
-.then(() => {
+    userCreateIndex: true,
+  })
+  .then(() => {
     console.log("MongoDB CONNECTED");
-}).catch((error) => {
+  })
+  .catch((error) => {
     console.log(error);
-});
+  });
