@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const taskSchema = new mongoose.Schema(
   {
-    username: {
+    user_name: {
       type: String,
       required: [true, "Username is needed!"],
     },
@@ -17,15 +17,7 @@ const taskSchema = new mongoose.Schema(
       type: String,
       enum: ["Work", "Hobby", "Task"],
       required: [true, "category need to be added"],
-    },
-    // createdAt: {
-    //   type: Date,
-    //   default: Date.now,
-    // },
-    // updatedAt: {
-    //   type: Date,
-    //   default: Date.now,
-    // }
+    }
   },
   { timestamp: true }
 );

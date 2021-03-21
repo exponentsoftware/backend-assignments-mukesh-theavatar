@@ -3,12 +3,11 @@ const Task = require("../models/todo");
 
 const addTask = async (req, res) => {
   try {
-    const { username, title, category } = req.body;
+    const { user_name, title, category } = req.body;
     let task = new Task({
-      username,
+      user_name,
       title,
-      category,
-      status,
+      category
     });
     let result = await task.save();
     return res.status(200).send({
@@ -16,7 +15,7 @@ const addTask = async (req, res) => {
       data: result,
     });
   } catch (error) {
-    console.log("Error in MongoDB:" + error);
+    console.log(error, "Error in MongoDB");
     return res.status(500).send({
       message:
         "We received some error while creating your task, please try again",

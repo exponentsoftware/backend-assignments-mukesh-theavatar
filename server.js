@@ -1,5 +1,5 @@
 const express = require("express");
-const mongoose = require("mongoose");
+// const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const logger = require("morgan");
 const app = express();
@@ -16,20 +16,6 @@ const Task = require("./models/todo");
 //Parsing User Data to Json Format
 app.use(bodyParser.json());
 
-//PageViews counter
-let pageViews = 0;
-
-//Allowing client access to the webpage
-app.get("/", (req, res) => {
-  pageViews++;
-  console.log(req.protocol, req.hostname, req.url);
-  res.sendFile(__dirname + "./bin/todo.html");
-});
-
-app.get("/views", (req, res) => {
-  res.send("Number of views = " + pageViews);
-});
-
 //Server running Log information
 app.listen(port, () => {
   console.log(`Server is listening at ${port}`);
@@ -43,3 +29,18 @@ app.use(express.urlencoded({ extended: false }));
 app.use("/", todoRouter);
 
 module.exports = app;
+
+
+// //PageViews counter
+// let pageViews = 0;
+
+// // //Allowing client access to the webpage
+// // app.get("/", (req, res) => {
+// //   pageViews++;
+// //   console.log(req.protocol, req.hostname, req.url);
+// //   res.sendFile(__dirname + "./bin/todo.html");
+// // });
+
+// // app.get("/views", (req, res) => {
+// //   res.send("Number of views = " + pageViews);
+// // });
